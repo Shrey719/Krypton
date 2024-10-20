@@ -1,0 +1,25 @@
+{
+  "name": "radium",
+  "version": "1.0.0",
+  "description": "Web OS ",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ShreyY",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "@emotion/react": "^11.13.0",
+    "@emotion/styled": "^11.13.0",
+    "@mercuryworkshop/bare-mux": "^2.1.4",
+    "@mercuryworkshop/epoxy-transport": "^2.1.21",
+    "@mercuryworkshop/wisp-js": "^0.3.2",
+    "@mui/icons-material": "^5.16.7",
+    "@mui/material": "^5.16.7",
+    "@rubynetwork/rammerhead": "^1.3.2",
+    "@titaniumnetwork-dev/ultraviolet": "^3.2.7",
+    "express": "^4.19.2",
+    "wisp-server-node": "^1.1.7"
+  }
+}

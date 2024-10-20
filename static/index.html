@@ -1,0 +1,34 @@
+<html>
+    <link href="/assets/css/styles.css" rel="stylesheet"> 
+    <link href="/assets/css/global.css" rel="stylesheet">
+    <script src="/assets/js/apps.js"></script>
+    <title>Krypton</title>
+    <link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico"></link>
+    <script src="/baremux/index.js" defer></script>
+    <script src="/epoxy/index.js" defer></script>
+    <script src="/uv/uv.bundle.js" defer></script>
+    <script src="/uv/uv.config.js" defer></script>
+
+    <script src="/assets/js/onload.js"></script>
+    <script src="/assets/js/uvonload.js" defer></script> 
+    <div class="allDiv">
+    <footer class="footer">
+        <div id="apps" class="apps_footer">
+		<a onclick="openApp('/settings.html')"><img src="/assets/img/settingsIcon.png" height=30vh width=30vw ></img></a>
+        <a onclick="openApp('/uv.html')" id="openUVLink"><img src="/assets/img/uv.png" height="30vh" width=30vw class="app_img"></img></a>
+        <a onclick="openApp('/terminal.html')"><img src="/assets/img/bash_shell.png" height=20vh width=25vw class="app_img"></img></a>
+        <a onclick="openApp('/store.html')"><img src="/assets/img/RadiumStore.png" height="30vh" width="30vw" class="app_img"></a>
+    </div>
+    </footer>    
+    <div id="apps_installed" class="apps_installed">
+
+    </div>
+    <div id="CurrentApp" class="CurrentApp">
+        <header class="header" id="appHeader">
+            <button onclick="removeCurrentApp()"><img src="/assets/img/xicon.png" height="25vh" width="25vw"></img></button>
+        </header>        
+    </div>
+    </div>
+    <script src="/assets/js/loadStoreApps.js"></script>
+
+</html>

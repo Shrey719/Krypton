@@ -1,0 +1,32 @@
+<html>
+<link href="/assets/css/settings.css" rel="stylesheet">
+<link href="/assets/css/global.css" rel="stylesheet">
+
+<script src="/config.js"></script>
+<script src="/assets/js/settingsonload.js"></script>
+<div class="setting">
+    <div class="dropdown">
+        <span>Search engine</span>
+        <div class="dropdown_content">
+            <button onclick="localStorage.setItem('/settings/searchEngine', 'https://www.google.com/search?q=')">Google</button><br>
+            <button onclick="localStorage.setItem('/settings/searchEngine', 'https://duckduckgo.com/?hps=1&q=')">DuckDuckGo</button><br>
+            <button onclick="localStorage.setItem('/settings/searchEngine', 'https://search.brave.com/search?q=')">Brave</button><br>
+            <button onclick="localStorage.setItem('/settings/searchEngine', 'https://www.ask.com/web?q=')">Ask</button><br>
+            <button onclick="localStorage.setItem('/settings/searchEngine', 'https://www.bing.com/search?pglt=43&q=')">Bing</button><br>
+            <br>
+        </div>
+        <br>
+    </div>
+</div>
+<br>
+<div class="setting">
+    <div class="dropdown">
+        <span>Theme</span>
+        <div class="dropdown_content">
+            <button onclick="localStorage.setItem('/settings/theme', 'dark')">Dark</button><br>
+            <button onclick="localStorage.setItem('/settings/theme', 'light')">Light</button> 
+        </div>
+        <br>
+    </div>
+</div>
+</html>

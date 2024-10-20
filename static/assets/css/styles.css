@@ -1,0 +1,80 @@
+body {
+    background-image: url("/assets/img/wallpaper.jpg");
+    background-size: 100% 100% ;
+    overflow: hidden;   
+    color: white;
+    margin: 0;
+    height: 100vh;
+    position: absolute;
+}
+.allDiv {
+    display: grid; 
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    position: relative;
+}
+.footer {
+	position: fixed;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+	background-color: rgb(22, 22, 22);
+	color: white;
+    padding: 0.5vh;
+    grid-column: 3
+}
+
+.apps_footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app_img {
+    padding-left: 0.6vw;
+    padding-right: 0.6vw;
+    border: 0px solid white;
+}
+
+.CurrentApp {
+    visibility: hidden;
+    height: 300px;
+    border: none;
+}
+
+.CurrentApp iframe {
+    border: none;
+    height: 100vh;
+    width: 100vw;
+    grid-column: 2
+
+}
+.CurrentApp button {
+    background-color: transparent !important;
+    border: none;
+    color: white;
+    
+}
+.CurrentApp button:hover {
+    color: rgb(97, 97, 97)
+}
+.header {
+    position: relative;
+	width: 100%;
+	background-color: rgb(22, 22, 22);
+	color: white;
+    left: 0;
+    top: 0;
+    padding: 1vh;
+    grid-column: 1;
+}
+
+
+.apps_installed {
+    z-index: 1;
+}
+
+.apps_installed button:hover {
+    background-color: rgb(97, 97, 97);  
+    border: 3px solid white;
+}

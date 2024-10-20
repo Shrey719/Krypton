@@ -1,0 +1,68 @@
+<html>
+<head>
+    <link href="/assets/css/terminal.css" rel="stylesheet">
+    <link href="/assets/css/global.css" rel="stylesheet">
+    <style>
+        body, html {
+            background-color: #212121;
+            color: #ffffff;
+            font-family: 'Helvetica', 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+        }
+        .terminal-typearea {
+            width: 100%;
+            height: 90%;
+            font-size: 24px;
+            padding: 20px;
+            box-sizing: border-box;
+            border: none;
+            outline: none;
+            resize: none;
+            overflow-y: auto;
+            background-color: #212121;
+            color: white;
+            overflow: "hidden"
+        }
+    </style>
+</head>
+
+<body>
+<textarea  id="terminal" class="terminal-typearea" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"> 
+root@radium $ 
+</textarea>
+<script>
+let commands = {
+    clear: function() {
+        document.getElementById("terminal").value = ""
+    }
+}
+var textarea = document.getElementById("terminal");
+textarea.addEventListener("keydown", function (e) {
+let splitlen = document.getElementById("terminal").value.split("\n")
+if (e.key === "Backspace" && splitlen[splitlen.length - 1] === "root@radium $ ") {
+    e.preventDefault()
+}
+if (e.key === "Enter" && splitlen[splitlen.length - 1].replaceAll("root@krypton $ ", "") === "clear" || splitlen[splitlen.length - 1].replaceAll("root@radium $ ", "") === "clear " || splitlen[splitlen.length - 1].replaceAll("root@radium $ ", "") === " clear") {
+    e.preventDefault()
+    commands.clear()
+} 
+if (e.key === "Enter") {
+
+    let splitlen = document.getElementById("terminal").value.split("\n")
+    e.preventDefault()
+        try {
+            document.getElementById("terminal").value =  document.getElementById("terminal").value + "\n" + "root@radium $ "
+            eval(splitlen[splitlen.length-1].replaceAll("root@radium $ ", ''))
+        } catch (e) {
+            document.getElementById("terminal").value = document.getElementById("terminal").value + "\n" + `Command failed: ${e}`
+            document.getElementById("terminal").value =     document.getElementById("terminal").value + "\n" + "root@radium $ "
+
+        }
+    }
+}); 
+</script>
+</body>
+</html>

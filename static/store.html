@@ -1,0 +1,39 @@
+<html>
+<head>
+    <link href="/assets/css/store.css" rel="stylesheet">
+    <link href="/assets/css/global.css" rel="stylesheet">
+    <script src="/baremux/index.js" defer></script>
+    <script src="/epoxy/index.js" defer></script>
+    <script src="/uv/uv.bundle.js" defer></script>
+    <script src="/uv/uv.config.js" defer></script>
+    <script src="/assets/js/uvonload.js" defer></script> 
+    <script src="/assets/js/store.js" type="module" defer></script>
+    <script>
+        if (localStorage.getItem("/apps/") == null) {
+            localStorage.setItem("/apps/", '[]');
+        }
+    </script>
+</head>
+<body>
+    <div class="row">
+        <div class="item">
+            <p>Minecraft by Electrical Development</p>
+            <sub>From catagory "games"</sub>
+            <br><br>
+            <button onclick = installMinecraft()>Install/Update</button>
+            <br><br>
+            <button onclick = uninstallMinecraft()>Uninstall</button>
+
+        </div>
+        <div class="item">
+            <p>Void by Shrey719</p>
+            <sub>From catagory "games"</sub>
+            <br><br>
+            <button onclick="installVoid()">Install/Update</button>
+            <br><br>
+            <button onclick="uninstallVoid()">Uninstall</button>
+        </div>
+    </div>
+
+</body>
+</html>

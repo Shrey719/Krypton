@@ -1,0 +1,29 @@
+body {
+    background-color: rgb(56, 56, 56) !important;
+    box-sizing: border-box;
+    color: white;
+}
+* {
+    box-sizing: border-box;
+    color: white;
+  }
+.item {
+    width: 20vw;
+    border: 1px solid black;
+    height: 20vh; 
+    padding-right: 0.5vw;
+    padding-left: 0.5vw;
+}
+.item button {
+    background-color: grey;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5vw 0.5vw
+
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
