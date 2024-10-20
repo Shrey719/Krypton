@@ -6,7 +6,7 @@ Krypton OS is an incredibly lightweight unix-based web OS
 - UV 3 w/ adblock   
 - Downloading apps   
 - A package manager   
-- A rootfs (kinda)   
+- A rootfs
 - A file system (but the wrappers sometimes kill themselves)   
 - A javascript terminal (regular one coming soon i promise, once i sort out /bin/sh/dnf and.. the rest of the stuff that goes in /bin/sh   
 
@@ -18,4 +18,5 @@ Krypton OS is an incredibly lightweight unix-based web OS
 - Make OOBE   
 - Make apps use a database instead of being hardcoded   
 - Finish the shell and finish all javascript things that go in /bin/sh   
-- Make the filesystem editable to the end user without developer mode (but make it use the fs wrapper & limit rootfs editing)   
+- Make the filesystem editable to the end user without developer mode (but make it use the fs wrapper & limit rootfs editing)
+- fix rootfs (DONE)
