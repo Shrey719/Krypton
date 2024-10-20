@@ -15,7 +15,7 @@ Krypton OS is an incredibly lightweight unix-based web OS
 - Sandbox the terminal   
 - Make js terminal only availible in developer mode    
 - Make developer mode     
-- Make OOBE   
+- Make OOBE  (Finished javascript side)
 - Make apps use a database instead of being hardcoded   
 - Finish the shell and finish all javascript things that go in /bin/sh   
 - Make the filesystem editable to the end user without developer mode (but make it use the fs wrapper & limit rootfs editing)
