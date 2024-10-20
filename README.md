@@ -2,19 +2,20 @@
 Krypton OS is an incredibly lightweight unix-based web OS
 
 # Features 
-- Full x86_64 support        
-- Assembly support       
-- syscalls     
-- A terminal    
-- The ability to load and create apps, with 4 major types: Javascript, assembly/x64, Html, and Proxed web apps (similar to electron)  
-
+- DNF support (kinda)   
+- UV 3 w/ adblock   
+- Downloading apps   
+- A package manager   
+- A rootfs (kinda)   
+- A file system (but the wrappers sometimes kill themselves)   
+- A javascript terminal (regular one coming soon i promise, once i sort out /bin/sh/dnf and.. the rest of the stuff that goes in /bin/sh   
 
 
 # TODO
-- Add a sandbox for the terminal       
-- Add linux commands for the terminal      
-- Add cdn loading compatibility for apps       
-- Make Apps look better     
-- Add tabs for UV   
-- Finish custom computer architecture stuff
-- Add syscalls and proper binaries   
+- Sandbox the terminal   
+- Make js terminal only availible in developer mode    
+- Make developer mode     
+- Make OOBE   
+- Make apps use a database instead of being hardcoded   
+- Finish the shell and finish all javascript things that go in /bin/sh   
+- Make the filesystem editable to the end user without developer mode (but make it use the fs wrapper & limit rootfs editing)   
