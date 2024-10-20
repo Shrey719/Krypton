@@ -29,12 +29,3 @@ function uninstallMinecraft() {
     localStorage.removeItem("/apps/minecraft/type")
     alert("Uninstallation finished!")
 }
-
-function installVoid() {
-    createFolder("/apps/", "void/")
-    createF("/apps/void/link")
-    editFile("/apps/void/link", __uv$config.prefix + __uv$config.encodeUrl("https://void.radio.am"))
-    createF("/apps/void/", 'img')
-    editFile("/apps/void/img", "/assets/img/void.png")
-    localStorage.setItem("/apps/void/name", "Void Games")
-}

@@ -15,3 +15,6 @@
 
 - FCI 
     When the creation of a file/folder is interupted/does not go through
+
+- CORS 
+    Fetch request did not go through due to cors

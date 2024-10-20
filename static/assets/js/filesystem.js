@@ -1,40 +1,66 @@
-export function createF(location, name) {
-	if (localStorage.getItem(location) == null) {
-		console.error("ERR:FNF - Location specified does not exist")
-		return "ERR:FNF"
-	}
-	try {
-	let x = JSON.parse(localStorage.getItem(location))
-	x.push(name)
-	localStorage.setItem(location, x)
-	}
-	catch (e) {
-		console.error("ERR:FCI - Exception thrown in creating file")
-		return 'ERR:FCI'
-	}
-}
-export function createFolder(location, name) {
-	if (localStorage.getItem(location) == null) {
-		console.error("ERR:FNF - Location specified does not exist")
-		return "ERR:FNF"
-	}
-	try {
-	let x = JSON.parse(localStorage.getItem(location))
-	x.push(name)
-	localStorage.setItem(location, x)
-	localStorage.setItem(location+x, "[]")
-	}
-	catch (e) {
-		console.error("ERR:FCI - Exception thrown in creating file")
-		return 'ERR:FCI'
-	}
-}
-export function editFile(location, newcontents) {
-	if (localStorage.getItem(location == null)){
-		console.error(`ERR:FNF - File not found "${location}"`)
-		return "ERR:FNF"
-	}
-	localStorage.setItem(location, newcontents)
-}
+function setuprootfs() {
+	return JSON.stringify({
+	 var: {
+ 
+	 },
+	 home: {
+ 
+	 },
+	 run: {
+ 
+	 },
+	 etc: {
+ 
+	 }, 
+	 bin: {
+		 bash: {
+			wget: {}
+		 }
+	 },
+	 usr: {
+ 
+	 },
+	 sbin: {
+ 
+	 },
+	 proc: {
+ 
+	 },
+	 lib: {
+ 
+	 },
+	 sys: {
+ 
+	 },
+	 root: {
+ 
+	 }
+	} )
+ }
 
 
+console.log("Creating rootfs...")
+localStorage.setItem("fs", setuprootfs())
+let rootFS = JSON.parse(localStorage.getItem("fs"))
+console.log("Rootfs created... Creating dnf")
+rootFS.bin.bash["wget"] = {}
+rootFS.bin.bash.wget['main'] =  `function(url) {
+ 	let resp = "";
+    fetch(url, {
+        method: 'GET'
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("ERR:NTWK - Response was not ok");
+        }
+        return response.text(); 
+    })
+    .then(data => {
+        resp =  data; 
+    })
+    .catch(error => {
+        return 'Error fetching (ERR:CORS)'
+    });
+	return resp
+}`
+localStorage.setItem("fs", JSON.stringify(rootFS))
