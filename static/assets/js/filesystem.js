@@ -34,16 +34,17 @@ function setuprootfs() {
 	 },
 	 root: {
  
-	 }
+	 },
+	 settings: {},
+	 apps: {}
 	} )
  }
-
 
 console.log("Creating rootfs...")
 localStorage.setItem("fs", setuprootfs())
 let rootFS = JSON.parse(localStorage.getItem("fs"))
 console.log("Rootfs created... Creating dnf")
-rootFS.bin.bash["wget"] = 	{}
+rootFS.bin.bash["wget"] = {}
 rootFS.bin.bash.wget['main'] =  `function(url) {
  	let resp = "";
     fetch(url, {
@@ -63,4 +64,4 @@ rootFS.bin.bash.wget['main'] =  `function(url) {
     });
 	return resp
 }`
-localStorage.setItem("fs", JSON.stringify(rootFS))
+localStorage.setItem("fs", JSON.stringify(rootFS))					

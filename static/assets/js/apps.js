@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", renderInstalledApps)
+var fs_temp_apps = JSON.parse(localStorage.getItem("fs"))
 function renderInstalledApps() {
-let Apps = JSON.parse(localStorage.getItem("/apps/"))
+let Apps = Object.keys(fs_temp_apps.apps)
 for (i = 0; i < Apps.length; i++) {
     current_obj = Apps[i]
     let current_obj_img = localStorage.getItem("/apps/" + current_obj + "/image")
@@ -83,5 +84,3 @@ function removeCurrentApp() {
     document.getElementById("appHeader").style.visibility = "hidden"   
     renderInstalledApps()
 }
-
-//    <iframe id="my-iframe" is="ChemicalIFrame" src="/~/uv/hvtrs8%2F-ezaopne%2Ccmm" height="100%" width="100%"></iframe>

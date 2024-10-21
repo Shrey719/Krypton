@@ -18,6 +18,6 @@ Krypton OS is an incredibly lightweight unix-based web OS
 - Make OOBE  (Finished javascript side)
 - Make apps use a database instead of being hardcoded   
 - Finish the shell and finish all javascript things that go in /bin/sh   
-- Make the filesystem editable to the end user without developer mode (but make it use the fs wrapper & limit rootfs editing)
-- fix rootfs (DONE)
-- Add a /uv directory in /sys (/sys/uv/) for uv configs and user settings
+- Make the filesystem editable to the end user without developer mode (but make it use the fs wrapper & limit rootfs editing)     
+- fix rootfs (DONE)  
+- Add a /uv directory in /sys (/sys/uv/) for uv configs and user settings    

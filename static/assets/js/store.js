@@ -1,31 +1,21 @@
-import "./filesystem.js"
+
+
 
 function installMinecraft() {
     var link = __uv$config.prefix + __uv$config.encodeUrl("https://eaglercraft.com")
-    var currentApps = JSON.parse(localStorage.getItem("/apps/"))
-    if (!currentApps.includes("minecraft")) { // You have to assume that anything that can go wrong, will go wrong
-        currentApps.push("minecraft")
-    }
-    localStorage.setItem("/apps/minecraft/link", link)
-    localStorage.setItem("/apps/minecraft/image", "/assets/img/minecraft.png")
-    localStorage.setItem("/apps/minecraft/name", "Minecraft")
-    localStorage.setItem("/apps/minecraft/type", "uv")
-    localStorage.setItem("/apps/minecraft/", "['link', 'image', 'name', 'type']")
-    localStorage.setItem("/apps/", JSON.stringify(currentApps))
+    let tempfs = JSON.parse(localStorage.getItem("fs"))
+
+    tempfs.apps["minecraft"] = {}
+    tempfs.apps.minecraft['link'] = link
+    tempfs.apps.minecraft["image"] = "/assets/img/minecraft.png"
+    tempfs.apps.minecraft["name"] = "Minecraft"
+    tempfs.apps.minecraft["type"] = "uv"
+    localStorage.setItem("fs",  JSON.stringify(tempfs)) // imagine someday i push a broken commit and accidently wipe evereyones files
     alert("Installation finished!")
 }   
 
 function uninstallMinecraft() {
-    var currentApps = JSON.parse(localStorage.getItem("/apps/"))
-    const index = currentApps.indexOf("minecraft");
-    if (index > -1) { 
-      currentApps.splice(index, 1); 
-    }
-    localStorage.setItem("/apps/", JSON.stringify(currentApps))
-    localStorage.removeItem("/apps/minecraft/link")
-    localStorage.removeItem("/apps/minecraft/")
-    localStorage.removeItem("/apps/minecraft/image")
-    localStorage.removeItem("/apps/minecraft/name")
-    localStorage.removeItem("/apps/minecraft/type")
-    alert("Uninstallation finished!")
+    let tempfs = JSON.parse(localStorage.getItem("fs"))
+    delete tempfs.apps.minecraft // praying that this dosent make a dangling pointer somewhere
+    localStorage.setItem("fs", JSON.stringify(tempfs))  
 }

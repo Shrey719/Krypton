@@ -1,15 +1,9 @@
-
-if (localStorage.getItem("setup") == null) {
-localStorage.setItem("/settings/", '[]')
-localStorage.setItem("/settings/theme", 'dark') // dark mode best mode 
-localStorage.setItem("/settings/searchEngine", 'https://www.google.com/search?q=')
-localStorage.setItem("/apps/", '[]')
-localStorage.setItem("setup", true)
+function setup() {
+    let tempfs = JSON.parse(localStorage.getItem("fs"))
+    tempfs.settings["theme"]= "dark"
+    tempfs.settings["searchEngine"] = "https://www.google.com/search?q="
 }
-
-// kernel loop 
-function loop() {
-    while (true) {
-
-    }
+if (localStorage.getItem("setup") == null) {
+setup()
+localStorage.setItem("setup", true)
 }
