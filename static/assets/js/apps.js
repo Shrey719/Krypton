@@ -4,11 +4,11 @@ function renderInstalledApps() {
 let Apps = Object.keys(fs_temp_apps.apps)
 for (i = 0; i < Apps.length; i++) {
     current_obj = Apps[i]
-    let current_obj_img = localStorage.getItem("/apps/" + current_obj + "/image")
-    let current_obj_name = localStorage.getItem("/apps/" + current_obj + "/name")
-    let current_obj_link = localStorage.getItem("/apps/" + current_obj + "/link")
-    let current_obj_type = localStorage.getItem("/apps/" + current_obj + "/type")
-    let current_obj_payload = localStorage.getItem("/apps/" + current_obj + "/payload")
+    let current_obj_img = fs_temp_apps.apps[Apps[i]].image
+    let current_obj_name = fs_temp_apps.apps[Apps[i]].name
+    let current_obj_link = fs_temp_apps.apps[Apps[i]].link
+    let current_obj_type = fs_temp_apps.apps[Apps[i]].type
+    let current_obj_payload = fs_temp_apps.apps[Apps[i]].payload
     if (current_obj_type == "uv") {
         let image_of = document.createElement("img")
         let redirc_of = document.createElement("button") 
