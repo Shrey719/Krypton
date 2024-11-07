@@ -31,7 +31,7 @@
 
 <body>
 <textarea  id="terminal" class="terminal-typearea" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"> 
-root@radium $ 
+root@hypr $
 </textarea>
 <script>
 let commands = {
@@ -42,10 +42,10 @@ let commands = {
 var textarea = document.getElementById("terminal");
 textarea.addEventListener("keydown", function (e) {
 let splitlen = document.getElementById("terminal").value.split("\n")
-if (e.key === "Backspace" && splitlen[splitlen.length - 1] === "root@radium $ ") {
+if (e.key === "Backspace" && splitlen[splitlen.length - 1] === "root@hypr $ ") {
     e.preventDefault()
 }
-if (e.key === "Enter" && splitlen[splitlen.length - 1].replaceAll("root@krypton $ ", "") === "clear" || splitlen[splitlen.length - 1].replaceAll("root@radium $ ", "") === "clear " || splitlen[splitlen.length - 1].replaceAll("root@radium $ ", "") === " clear") {
+if (e.key === "Enter" && splitlen[splitlen.length - 1].replaceAll("root@hypr $ ", "") === "clear" || splitlen[splitlen.length - 1].replaceAll("root@hypr $ ", "") === "clear " || splitlen[splitlen.length - 1].replaceAll("root@hypr $ ", "") === " clear") {
     e.preventDefault()
     commands.clear()
 } 
@@ -54,11 +54,11 @@ if (e.key === "Enter") {
     let splitlen = document.getElementById("terminal").value.split("\n")
     e.preventDefault()
         try {
-            document.getElementById("terminal").value =  document.getElementById("terminal").value + "\n" + "root@radium $ "
-            eval(splitlen[splitlen.length-1].replaceAll("root@radium $ ", ''))
+            document.getElementById("terminal").value =  document.getElementById("terminal").value + "\n" + "root@hypr $ "
+            eval(splitlen[splitlen.length-1].replaceAll("root@hypr $ ", ''))
         } catch (e) {
             document.getElementById("terminal").value = document.getElementById("terminal").value + "\n" + `Command failed: ${e}`
-            document.getElementById("terminal").value =     document.getElementById("terminal").value + "\n" + "root@radium $ "
+            document.getElementById("terminal").value =     document.getElementById("terminal").value + "\n" + "root@hypr $ "
 
         }
     }
