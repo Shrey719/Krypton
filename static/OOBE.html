@@ -1,11 +1,21 @@
 <html>
     <script src="/assets/js/x64/registers.js"></script>
     <script src="/assets/js/filesystem.js"></script>
+    <script src="/assets/js/system/sysflags.js"></script>
+
     <script>
 	localStorage.setItem("oobewent", "true") 
     </script>
     <h1>Setting up your computer...</h1>
+
     <script>
+	let devmodeprompt =  prompt("do you want to enable developer mode? (y/n)") 
+	if (devmodeprompt == 'y') {
+		setDevmodeEnabled()	
+	} else {
+		setDevmodeDisabled()
+	}
+	// finish OOBE and boot main OS (/index.html)
 	window.location.href = "/"
     </script>
 </html>
