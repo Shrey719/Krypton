@@ -1,3 +1,8 @@
+/*TODO: unfuck*/
+/*
+ * - Add app icon and make it render apps fetched from a database (idk where itl be stored)
+ *
+*/
 body {
     background-color: rgb(56, 56, 56) !important;
     box-sizing: border-box;
