@@ -1,5 +1,5 @@
 # Krypton OS 
-Krypton OS is an incredibly lightweight unix-based web OS
+It shits itself every 3 minutes 
 
 # Features 
 - DNF support (kinda)   
