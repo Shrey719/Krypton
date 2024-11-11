@@ -6,6 +6,9 @@
 		if (localStorage.getItem("oobewent") == null) {
 			window.location.href = "/OOBE.html"
 		}
+		if (localStorage.getItem("version") == null) {
+			localStorage.setItem('version', 'b1.1')
+		}
 	</script>
     <script src="/assets/js/apps.js"></script>
     <title>Krypton</title>
