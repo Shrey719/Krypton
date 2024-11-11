@@ -1,0 +1,59 @@
+<html>
+	<head> 
+	<style> 
+	body {
+	background-color: black;
+	color: white;
+	}
+	.pathP {
+	display:inline;
+	margin: 0.5vw;
+	}
+	.eval_box {
+	background-color: black;
+	border: none;
+	color: white; 
+
+	}
+	.eval_box:focus {
+	border: none;
+	outline: none;
+	
+	}
+
+	</style>
+	</head> 
+
+	<body>
+	<script>
+		function onEnter() {
+			document.querySelector(".eval_box").readOnly = true
+
+			let newThing = document.createElement("input")
+			let bashHeader = document.createElement("p")
+			bashHeader.classList.add("pathP")
+
+			newThing.addEventListener("keypress", function(e) {
+				if (e.key === "Enter") {
+					e.preventDefault()
+					onEnter()
+				}
+			})
+
+			bashHeader.innerText = "root@krypton - [~]"
+			newThing.id = "eval_box" 
+			newThing.classList.add("eval_box")
+			
+			document.body.appendChild(document.createElement("br"))
+			document.body.appendChild(bashHeader)
+			document.body.appendChild(newThing)
+			newThing.focus()
+
+		}
+	</script>
+
+	<p class="pathP">root@krypton - [~]</p>
+	<input id="eval_box" class="eval_box" onsubmit="onEnter()"></input>
+
+	</body>
+</html>
