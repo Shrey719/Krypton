@@ -3,6 +3,9 @@
 
 It shits itself every 3 minutes 
 
+# Known issues 
+- When downloading from uv/search engine, the topbar gets broken 
+
 # Features 
 - DNF support (kinda)   
 - UV 3 w/ adblock   
