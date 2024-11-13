@@ -8,12 +8,13 @@
 	.pathP {
 	display:inline;
 	margin: 0.5vw;
+	max-width: 10vw;
 	}
 	.eval_box {
 	background-color: black;
 	border: none;
 	color: white; 
-
+	width: 80vw;
 	}
 	.eval_box:focus {
 	border: none;
@@ -27,7 +28,9 @@
 	<body>
 	<script>
 		function onEnter() {
+			try {
 			document.querySelector(".eval_box").readOnly = true
+			} catch (e) {console.info("expected behavior for this to only error once. If this errors multiple times, something is wrong")}
 
 			let newThing = document.createElement("input")
 			let bashHeader = document.createElement("p")
@@ -50,10 +53,9 @@
 			newThing.focus()
 
 		}
+		onEnter()
 	</script>
-
-	<p class="pathP">root@krypton - [~]</p>
-	<input id="eval_box" class="eval_box" onsubmit="onEnter()"></input>
 
 	</body>
 </html>
+
