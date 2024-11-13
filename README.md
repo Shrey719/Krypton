@@ -3,9 +3,14 @@
 
 It shits itself every 3 minutes 
 
+# First priority Todo 
+- Mount ~/ on localStorage and the rootfs on idb (fix for bg #2)
+- 
+
+
 # Known issues 
-- When downloading from uv/search engine, the topbar gets broken 
-- If rootfs exceeds around 10 mb, it shuts down and stops working. The only way to fix this as the end user is to wipe your rootfs by removing it and then going to /oobe.html. The fix on our side is to use IDB, which has a 2gb limit instead of the 10mb that localstorage gives   
+- When downloading from uv/search engine, the topbar gets broken (bg #1)
+- If rootfs exceeds around 10 mb, it shuts down and stops working. The only way to fix this as the end user is to wipe your rootfs by removing it and then going to /oobe.html. The fix on our side is to use IDB, which has a 2gb limit instead of the 10mb that localstorage gives   (bg #2)
 
 # Features 
 - DNF support (kinda)   
