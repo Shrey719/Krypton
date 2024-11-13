@@ -4,6 +4,13 @@
     <script src="/assets/js/system/sysflags.js"></script>
 
     <script>
+	if (localStorage.getItem("oobewent") == "true") {
+		alert("OOBE already went! Do you wish to continue?")
+		let yn = prompt("Do you want to continue (y/n)")
+		if (yn != 'y') {
+			window.location.href = "/"
+		}
+	}
 	localStorage.setItem("oobewent", "true") 
     </script>
     <h1>Setting up your computer...</h1>
