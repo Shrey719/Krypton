@@ -28,7 +28,7 @@
 	<body>
 	<script>
 		function onEnter() {
-			try {
+			try { // This will error CONSTANTLY. I dont give a fuck though
 			document.querySelector(".eval_box").readOnly = true
 			} catch (e) {console.info("expected behavior for this to only error once. If this errors multiple times, something is wrong")}
 
@@ -39,11 +39,11 @@
 			newThing.addEventListener("keypress", function(e) {
 				if (e.key === "Enter") {
 					e.preventDefault()
-					onEnter()
+					onEnter() 
 				}
 			})
 
-			bashHeader.innerText = "root@krypton - [~]"
+			bashHeader.innerText = "root@krypton - [~]" // arg[-1] = kill me right fucking now
 			newThing.id = "eval_box" 
 			newThing.classList.add("eval_box")
 			
