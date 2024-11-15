@@ -6,7 +6,7 @@
     <script>
 	if (localStorage.getItem("oobewent") == "true") {
 		alert("OOBE already went! Do you wish to continue?")
-		let yn = prompt("Do you want to continue (y/n)")
+		let yn = prompt("Do you want to continue (y/n)") // SAFTEY RIGHT HERE
 		if (yn != 'y') {
 			window.location.href = "/"
 		}
